@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'core/app_lifecycle_native.dart';
 import 'core/session_timer_notifier.dart';
 import 'features/calculator/calculator_screen.dart';
@@ -75,44 +74,15 @@ class _ZeroPointAppState extends State<ZeroPointApp> {
       brightness: Brightness.dark,
       useMaterial3: true,
       colorScheme: ColorScheme.fromSeed(
-        seedColor: const Color(0xFF7C4DFF),
+        seedColor: Colors.greenAccent,
         brightness: Brightness.dark,
       ),
-      scaffoldBackgroundColor: const Color(0xFF090909),
+      scaffoldBackgroundColor: const Color(0xFF0D0D0D),
       appBarTheme: const AppBarTheme(
-        backgroundColor: Color(0xFF090909),
+        backgroundColor: Color(0xFF0D0D0D),
         elevation: 0,
       ),
-      cardTheme: CardThemeData(
-        color: const Color(0xFF141414),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-          side: const BorderSide(color: Colors.white12),
-        ),
-      ),
-      inputDecorationTheme: InputDecorationTheme(
-        filled: true,
-        fillColor: const Color(0xFF141414),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-      ),
-      filledButtonTheme: FilledButtonThemeData(
-        style: FilledButton.styleFrom(
-          minimumSize: const Size.fromHeight(52),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
-          ),
-        ),
-      ),
-      elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-          minimumSize: const Size.fromHeight(50),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
-          ),
-        ),
-      ),
+      fontFamily: 'monospace',
     );
   }
 

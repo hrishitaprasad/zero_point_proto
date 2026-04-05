@@ -21,7 +21,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     if (input == secretPin) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => ChatScreen()),
+        MaterialPageRoute(builder: (_) => const ChatScreen()),
       );
       return;
     }

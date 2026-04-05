@@ -584,7 +584,7 @@ class _GroupBroadcastScreenState extends State<GroupBroadcastScreen> {
         width: double.infinity,
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: Colors.white10,
+          color: const Color(0xFF94A3B8),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(color: Colors.white12),
         ),

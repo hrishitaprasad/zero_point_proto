@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../services/e2ee_service.dart';
 
 class E2EETestScreen extends StatefulWidget {
-  E2EETestScreen({super.key});
+  const E2EETestScreen({super.key});
 
   @override
   State<E2EETestScreen> createState() => _E2EETestScreenState();
@@ -155,7 +155,8 @@ class _E2EETestScreenState extends State<E2EETestScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   DropdownButtonFormField<String>(
-                    value: selectedMessage,
+                    initialValue: selectedMessage,
+                    isExpanded: true,
                     items: sampleMessages
                         .map(
                           (msg) => DropdownMenuItem(

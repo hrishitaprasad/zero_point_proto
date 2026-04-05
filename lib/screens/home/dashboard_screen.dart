@@ -188,7 +188,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     'Test Real E2EE',
                     () => Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (_) => E2EETestScreen()),
+                      MaterialPageRoute(builder: (_) => const E2EETestScreen()),
                     ),
                   ),
                   _actionButton(
@@ -202,7 +202,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     'Open Calculator Mask',
                     () => Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (_) => CalculatorScreen()),
+                      MaterialPageRoute(builder: (_) => const CalculatorScreen()),
                     ),
                   ),
                 ],
