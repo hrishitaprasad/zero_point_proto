@@ -167,7 +167,7 @@ class _GroupBroadcastScreenState extends State<GroupBroadcastScreen> {
       return;
     }
 
-    _transport.sendRaw(jsonEncode({
+    _transport.send(jsonEncode({
       "type": "register",
       "userId": userId,
     }));
@@ -441,7 +441,7 @@ class _GroupBroadcastScreenState extends State<GroupBroadcastScreen> {
 
       final packetMessageId = "$baseId|${recipient.userId}";
 
-      _transport.sendRaw(jsonEncode({
+      _transport.send(jsonEncode({
         "type": "group_msg",
         "messageId": packetMessageId,
         "from": myUserId,
@@ -716,7 +716,8 @@ class _GroupBroadcastScreenState extends State<GroupBroadcastScreen> {
                   children: [
                     Expanded(
                       child: ElevatedButton.icon(
-                        onPressed: _myInviteCode.isEmpty ? null : _showMyQrDialog,
+                        onPressed:
+                            _myInviteCode.isEmpty ? null : _showMyQrDialog,
                         icon: const Icon(Icons.qr_code),
                         label: const Text("Show QR"),
                       ),

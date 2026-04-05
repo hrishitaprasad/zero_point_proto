@@ -38,13 +38,14 @@ class ChatScreen extends StatefulWidget {
 
 class _ChatScreenState extends State<ChatScreen> {
   final _messageController = TextEditingController();
+  final _ipController = TextEditingController(text: '10.0.2.2');
   final List<DemoChatItem> _items = [];
   int _counter = 0;
 
-  // Android emulator -> local backend on laptop
-  final _linkSafety = LinkSafetyService(
-    baseUrl: 'http://10.0.2.2:5050',
-  );
+  // Dynamically create service with the current IP
+  LinkSafetyService get _linkSafety => LinkSafetyService(
+        baseUrl: 'http://${_ipController.text.trim()}:4040',
+      );
 
   String _nextId() => 'msg_${++_counter}';
 
@@ -252,6 +253,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   void dispose() {
     _messageController.dispose();
+    _ipController.dispose();
     super.dispose();
   }
 
@@ -266,6 +268,17 @@ class _ChatScreenState extends State<ChatScreen> {
       body: SafeArea(
         child: Column(
           children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+              child: TextField(
+                controller: _ipController,
+                decoration: const InputDecoration(
+                  labelText: 'Server IP',
+                  border: OutlineInputBorder(),
+                  isDense: true,
+                ),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
               child: Align(

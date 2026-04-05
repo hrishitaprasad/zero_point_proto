@@ -4,7 +4,7 @@ const app = express();
 app.use(express.json());
 
 const VT_API_KEY = process.env.VT_API_KEY || "PUT_YOUR_VT_KEY_HERE";
-const PORT = 5050;
+const PORT = 4040;
 
 function classify(detected) {
   if (detected === 0) return "safe";
